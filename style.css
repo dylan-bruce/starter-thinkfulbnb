@@ -31,23 +31,12 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
+  height: auto;
 }
 
-/* ---  Groups & Items --- */
-
-.group {
-  display: flex;
-  flex-direction: column;
-}
-
-.item {
-  flex: 1;
-  margin: 10px;
-}
-
-.item-double {
-  flex: 2;
+#about img {
+  padding-bottom: 10px;
 }
 
 /* -------  Navigation ------- */
@@ -60,8 +49,14 @@ header {
 
 .logo {
   font-family: "Pangolin", cursive;
-  font-size: 72px;
+  font-size: 55px;
   color: #fff;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
 }
 
 header nav ul li {
@@ -80,13 +75,33 @@ header nav ul li a:hover {
 }
 
 /* -------  Search Form ------- */
+.stay h2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 form {
+  display: flex;
+  flex-direction: column;
   border: 2px solid #ff385c;
   padding: 10px;
 }
 
+.form-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 form label {
   font-weight: bold;
+  font-size: 1em;
+}
+
+.vacation-type {
+  text-align: left;
+  font-size: 1em;
+  margin: 0;
 }
 
 form select,
@@ -117,3 +132,61 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+@media all and (min-width: 600px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    max-width: vw;
+  }
+
+  .logo {
+    font-size: 72px;
+  }
+
+  header nav {
+    padding-top: 5px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .form-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 13px;
+  }
+
+  .form-input h2 {
+    font-size: 1em;
+    align-self: flex-start;
+    font-weight: bold;
+  }
+
+  .group {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .item {
+    flex: 1;
+    margin: 10px;
+  }
+  
+  .item-double {
+    flex: 2;
+    align-self: center;
+  }
+
+  .flex-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .center-align {
+    align-self: center;
+  }
+}
